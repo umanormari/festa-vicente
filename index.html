@@ -6,7 +6,6 @@
 <title>Jornada de Vicente</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="topbar">
@@ -14,103 +13,123 @@
   <button class="btn" onclick="irTelao()">Telão</button>
 </div>
 
-<!-- TELA INICIAL -->
+<!-- TELA 1 -->
 <section id="tela1" class="screen tela-vicente">
-
   <div class="overlay"></div>
 
   <div class="conteudo">
     <h1>🌿 Jornada de Vicente 🌿</h1>
+    <p>Bem-vindos à Terra Média.<br>Hoje celebramos o primeiro ano do pequeno Vicente.</p>
 
-    <p>
-      Bem-vindos à Terra Média.<br>
-      Hoje celebraremos o primeiro ano do pequeno Vicente.
-    </p>
-
-    <button id="btnIniciar" class="btn" type="button">
-      Iniciar Jornada
-    </button>
+    <button id="btnIniciar" class="btn">Iniciar Jornada</button>
   </div>
-
 </section>
 
 <!-- TELA 2 -->
 <section id="tela2" class="screen hidden">
-  <h2>Escolha seu povo</h2>
+<h2>Escolha seu povo</h2>
 
-  <div class="cards">
-
-    <div class="card" data-grupo="Elfos">
-      <div class="emoji">🧝</div>
-      <h3>Elfos</h3>
-    </div>
-
-    <div class="card" data-grupo="Hobbits">
-      <div class="emoji">🍃</div>
-      <h3>Hobbits</h3>
-    </div>
-
-    <div class="card" data-grupo="Anões">
-      <div class="emoji">⛏️</div>
-      <h3>Anões</h3>
-    </div>
-
-    <div class="card" data-grupo="Magos">
-      <div class="emoji">🧙</div>
-      <h3>Magos</h3>
-    </div>
-
-  </div>
+<div class="cards">
+<div class="card" data-grupo="Elfos"><div class="emoji">🧝</div><h3>Elfos</h3></div>
+<div class="card" data-grupo="Hobbits"><div class="emoji">🍃</div><h3>Hobbits</h3></div>
+<div class="card" data-grupo="Anões"><div class="emoji">⛏️</div><h3>Anões</h3></div>
+<div class="card" data-grupo="Magos"><div class="emoji">🧙</div><h3>Magos</h3></div>
+</div>
 </section>
 
 <!-- TELA 3 -->
 <section id="tela3" class="screen hidden">
-  <h2 id="grupoEscolhidoTitulo"></h2>
-  <p>Escolha o nome:</p>
+<h2 id="grupoEscolhidoTitulo"></h2>
+<p>Escolha o nome:</p>
 
-  <div id="listaNomes" class="names"></div>
+<div id="listaNomes" class="names"></div>
 
-  <button class="btn voltarTela2">Voltar</button>
+<button class="btn" onclick="mostrar('tela2')">Voltar</button>
 </section>
 
 <!-- TELA 4 -->
 <section id="tela4" class="screen hidden">
-  <h2 id="confirmacao"></h2>
-  <p>Uma nova aliança foi formada!</p>
+<h2 id="confirmacao"></h2>
+<p>Uma nova aliança foi formada!</p>
 
-  <button class="btn proximo">Próximo</button>
-  <button class="btn verTelao">Ver Telão</button>
+<button class="btn" onclick="mostrar('tela2')">Próximo</button>
+<button class="btn" onclick="irTelao()">Ver Telão</button>
 </section>
 
 <!-- TELÃO -->
 <section id="telao" class="screen hidden">
-  <h1>⚔️ Sociedades da Terra Média ⚔️</h1>
+<h1>⚔️ Sociedades da Terra Média ⚔️</h1>
 
-  <div class="board">
+<div class="board">
 
-    <div class="group">
-      <h3>🧝 Elfos</h3>
-      <ul id="listaElfos"></ul>
-    </div>
+<div class="group">
+<h3>🧝 Elfos</h3>
+<ul id="listaElfos"></ul>
+</div>
 
-    <div class="group">
-      <h3>🍃 Hobbits</h3>
-      <ul id="listaHobbits"></ul>
-    </div>
+<div class="group">
+<h3>🍃 Hobbits</h3>
+<ul id="listaHobbits"></ul>
+</div>
 
-    <div class="group">
-      <h3>⛏️ Anões</h3>
-      <ul id="listaAnoes"></ul>
-    </div>
+<div class="group">
+<h3>⛏️ Anões</h3>
+<ul id="listaAnoes"></ul>
+</div>
 
-    <div class="group">
-      <h3>🧙 Magos</h3>
-      <ul id="listaMagos"></ul>
-    </div>
+<div class="group">
+<h3>🧙 Magos</h3>
+<ul id="listaMagos"></ul>
+</div>
 
-  </div>
+</div>
 
-  <button class="btn voltarTela2">Voltar</button>
+<button class="btn" onclick="mostrar('quiz')">Quiz do Vicente</button>
+<button class="btn" onclick="mostrar('tela2')">Voltar</button>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="screen hidden">
+
+<h1>📜 Crônicas do Pequeno Hobbit Vicente</h1>
+
+<h2 id="perguntaTitulo"></h2>
+<p id="perguntaTexto"></p>
+
+<div id="alternativas" class="alternativas"></div>
+
+<div class="cards">
+<div class="card responder" data-grupo="Elfos"><div class="emoji">🧝</div><h3>Elfos</h3></div>
+<div class="card responder" data-grupo="Hobbits"><div class="emoji">🍃</div><h3>Hobbits</h3></div>
+<div class="card responder" data-grupo="Anões"><div class="emoji">⛏️</div><h3>Anões</h3></div>
+<div class="card responder" data-grupo="Magos"><div class="emoji">🧙</div><h3>Magos</h3></div>
+</div>
+
+<p id="grupoEscolhidoQuiz"></p>
+
+<button class="btn" onclick="confirmarResposta()">Confirmar</button>
+<button class="btn" onclick="proximaPergunta()">Próxima</button>
+<button class="btn" onclick="mostrar('ranking')">Ranking</button>
+<button class="btn" onclick="irTelao()">Voltar</button>
+
+<p id="resultadoQuiz"></p>
+
+</section>
+
+<!-- RANKING -->
+<section id="ranking" class="screen hidden">
+
+<h1>🏆 Ranking</h1>
+
+<div class="board">
+<div class="group"><h3>🧝 Elfos</h3><p id="ptsElfos"></p></div>
+<div class="group"><h3>🍃 Hobbits</h3><p id="ptsHobbits"></p></div>
+<div class="group"><h3>⛏️ Anões</h3><p id="ptsAnoes"></p></div>
+<div class="group"><h3>🧙 Magos</h3><p id="ptsMagos"></p></div>
+</div>
+
+<button class="btn" onclick="mostrar('quiz')">Voltar</button>
+
 </section>
 
 <script src="script.js"></script>
